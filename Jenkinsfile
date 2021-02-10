@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/rudra-superrr/myProject.git'
+        git branch: 'master', url: 'https://github.com/rudra-superrr/myProject.git'
       }
     }
     stage('Build') {
