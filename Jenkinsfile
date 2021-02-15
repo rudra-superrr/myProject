@@ -26,5 +26,11 @@ pipeline {
         archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
       }
     }
+    stage('Deploy') {
+      steps {
+        input 'Do you approve the deployment?'
+        sh 'scp target/*.jar rudra@192.168.56.101:/opt/demo_pipeline'
+      }
+    }
   }
 }
